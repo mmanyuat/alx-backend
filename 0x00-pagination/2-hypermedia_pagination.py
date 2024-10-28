@@ -40,12 +40,12 @@ class Server:
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
         startIndex, endIndex = index_range(page, page_size)
-        dataset = self.dataset()
+        dataset = self.dataset
         if startIndex >= len(dataset):
             return []
         return dataset[startIndex:endIndex]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10):
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         data = self.get_page(page, page_size)
         page_size_actual = len(data)
         total_pages = math.ceil(len(self.dataset) / page_size)
