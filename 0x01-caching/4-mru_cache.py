@@ -2,10 +2,14 @@
 """MRU algorithmns"""
 
 from base_caching import BaseCaching
+"""Importing from the base class"""
 
 
 class MRUCache(BaseCaching):
+    """A class that uses MRU algorithm"""
+
     def __init__(self):
+        """The constructor"""
         super().__init__()
         self.usage_order = []
 
